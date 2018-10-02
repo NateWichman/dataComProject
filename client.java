@@ -31,25 +31,6 @@ class udpclient{
 	    String fileName  = cons.readLine("Enter a File Name: ");
 	    ByteBuffer buf = ByteBuffer.wrap(fileName.getBytes());
 	    sc.send(buf, new InetSocketAddress((ipAddress),portNumber));
-            
-	    /** Just for debugging purposes, sending a 1 to check connection **/
-	    String example = "1";
-	    ByteBuffer buffer = ByteBuffer.wrap(example.getBytes());
-	    sc.send(buffer, new InetSocketAddress((ipAddress),portNumber));
-
-	    /** Just for debugging as well, receiving a "check" string from the server **/
-	    ByteBuffer buf3 = ByteBuffer.allocate(5000);
-	    sc.receive(buf3);
-	    buf3.flip();
-	    byte[] b = new byte[buf3.remaining()];
-	    String out = new String(buf3.array());
-	    System.out.println("Test: " + out);
-	    out = out.replaceAll("\0+","");
-	    if(out.equals("check")){
-		    System.out.println("Test Passes");
-	    }else{
-		    System.out.println("Test Failed");
-	    }
 	    
 	    /** Setting up the output file to write too **/
 	    File outputFile = new File("output.txt");
@@ -144,23 +125,7 @@ class udpclient{
 				    timer ++;
 			    }
 		    }else{
-			    
-
-
-		 	   /** Adding new packet to the total byte array (ReceivedData[]) **/
-		/*     byte[] combo = new byte[a.length + receivedData.length];
-		     System.arraycopy(receivedData, 0, combo,0, receivedData.length);
-		     System.arraycopy(a, 0, combo, receivedData.length, a.length);
-		     receivedData = combo; */
-		   
 			   
-		   // System.out.println("Bytes Received: " + a);
-		    
-		    
-		    /** Sending acknoledgment **/
-	  	 //   String ack = "c" + Integer.toString(acknowledgment); //Every acknowledgment begins with c
-		    //I had issues checking if the string was null on the server end, so instead I check that
-		    //it begins with c then remove the c leaving just the integer on the server end.
 		    ByteBuffer buf4 = ByteBuffer.wrap(ack.getBytes());
 		    sc.send(buf4, new InetSocketAddress((ipAddress), portNumber));
 		    acknowledgment++;

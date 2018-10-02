@@ -63,19 +63,10 @@ class udpserver{
 			if(file.exists() && !file.isDirectory()){
 		            	reader = new BufferedReader(new FileReader(fileName));
 			
-			/** Testing if Acknowledgments can be gotten from the client (for debugging) **/
-			ByteBuffer buffer2 = ByteBuffer.allocate(4096);
-			c.receive(buffer2);
-			String example = new String(buffer2.array());
-			System.out.println("Recieved From Client: " + example);
 
 			/** Reading in the file into a byte array **/
 			byte[] fileContent = Files.readAllBytes(file.toPath());
 			
-			/** Testing connection with the Client (For Debugging) **/
-			byte[] test = "check".getBytes();
-			ByteBuffer buf2 = ByteBuffer.wrap(test);
-			c.send(buf2, clientaddr);
 
 			/** Getting File Size **/
 			int size = fileContent.length;

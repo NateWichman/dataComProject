@@ -113,13 +113,16 @@ class udpserver{
 						int remaining = size % 900;
 					         packet = Arrays.copyOfRange(fileContent, (j*900), ((j*900)+remaining));
 					}
-				        //	byte[] packet = Arrays.copyOfRange(fileContent, (j*900), ((j+1)*900));
-
+				
+					/** Adding PacketNumber onto the beginning of the packet **/
 					byte[] combo = new byte[numBytes.length + packet.length];
 					System.arraycopy(numBytes, 0, combo, 0, numBytes.length);
 					System.arraycopy(packet, 0, combo, numBytes.length, packet.length);
+					
+					/** Sending packet **/
+					manager.sendPacket(c, combo, clientaddr);
 
-					manager.sendPacket(c, combo, clientaddr); 
+					/** Adding packet to saved packets, incase it needs to be resent **/	
 					savedPackets.add(new Packet(j, combo));
 				}
 				
@@ -129,6 +132,9 @@ class udpserver{
 				String ack = new String(ackBuf.array());
 
 				/** First letter of Acknowledment is always c **/
+				/** I should have changed this to receiving just an
+				 * integer instead of a string with buffer.getInt()
+				 * but it works so I left it **/
 				if(ack.charAt(0) == 'c'){
 					/** Removing the 'c' leaving just an integer in the string **/
 					ack = ack.substring(1);
@@ -141,34 +147,38 @@ class udpserver{
 					acks.add(Integer.parseInt(ack));
 					canSend = true;
 				}
-
+				
+				/** updating the sliding window **/
 				if(acks.contains(lowerLim)){
+					/** Removing the lowerLim if its in there **/
 					acks.remove(new Integer(lowerLim));
 					lowerLim++;
 					upperLim++;
 					System.out.println("Sliding window up by 1");
 					//Reseting timer as we do not need to resend 
 					timer = 0;
-				//	acks.remove(lowerLim - 1);
 
 				}
 
 				/** Checking to see if we have reached the sliding window limit **/
 				if(j > upperLim){
 					canSend = false;
+					/** Decrementing j to restart this same iteration of the loop 
+					 * as to not skip packets **/
 					j--;
-
+					
+					/** If the Acknoledments array doesnt have the lower lim, it must be resent **/
 					if(!acks.contains(lowerLim)){
+						/**I wanted to give the client some time to send the ack so I wait
+						 * 20 iterations of the loop before resending **/
 						if(timer >= 20){
 					        	System.out.println("Resending packet: " + lowerLim);
 							manager.sendPacket(c, savedPackets.get(0).getData(), clientaddr);
 							System.out.println("Actually Sending packet: " + savedPackets.get(0).getNumber());
 							timer = 0;
-					
 						}
 						else{
 							timer++;
-							//System.out.println("Sliding window reached, waiting 20 iterations for ack before resending");
 						}
 					}
 			        }
@@ -184,7 +194,8 @@ class udpserver{
 			byte[] termination = "done".getBytes();
 			ByteBuffer buf3 = ByteBuffer.wrap(termination);
 			c.send(buf3, clientaddr);
-		        
+			
+				        
 			System.out.println("Finished");
 			}else{
 				System.out.println("File Not Found");

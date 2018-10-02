@@ -82,7 +82,7 @@ class udpserver{
 			System.out.println("Size of file: " + size);
 
 			/** Finding the number of packets the Server needs to send, with a max size of 1024 bytes **/
-			int numPackets = (size / 1024) + 1;
+			int numPackets = (size / 900) + 1;
 			
 			/** Holds the acknoledgments received **/
 			ArrayList<Integer> acks = new ArrayList<Integer>();
@@ -116,7 +116,13 @@ class udpserver{
 				if(canSend == true){
 					/** Sending packet **/
 					ByteBuffer buffer = ByteBuffer.allocate(4096);
-					byte[] packet = Arrays.copyOfRange(fileContent, (j*1024), ((j+1)*1024));
+					byte[] packet = Arrays.copyOfRange(fileContent, (j*900), ((j+1)*900));
+
+					if(j == (numPackets - 1)){
+						int remaining = size % 900;
+					         packet = Arrays.copyOfRange(fileContent, (j*900), ((j*900)+remaining));
+					}
+				        //	byte[] packet = Arrays.copyOfRange(fileContent, (j*900), ((j+1)*900));
 
 					byte[] combo = new byte[numBytes.length + packet.length];
 					System.arraycopy(numBytes, 0, combo, 0, numBytes.length);

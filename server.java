@@ -171,7 +171,7 @@ class udpserver{
 						}
 						else{
 							timer++;
-							System.out.println("Sliding window reached, waiting 20 iterations for ack before resending");
+							//System.out.println("Sliding window reached, waiting 20 iterations for ack before resending");
 						}
 					}
 			        }

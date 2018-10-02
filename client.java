@@ -58,7 +58,11 @@ class udpclient{
 	    /** Byte array to hold the received data **/
 	    byte[] receivedData = {};
 	  
+	    
 	    int acknowledgment = 0;
+
+	    ArrayList<Packet> packets = new ArrayList<Packet>();
+	    int currentPacketNumber = 0;
 	    while(true){
 		    /** Receiving packets from Server **/
 		    ByteBuffer buf2 = ByteBuffer.allocate(5000);
@@ -86,22 +90,74 @@ class udpclient{
 		    byte[] a = new byte[buf2.remaining()];
 		    buf2.get(a); 
 		    
-		    /** Adding new packet to the total byte array (ReceivedData[]) **/
-		    byte[] combo = new byte[a.length + receivedData.length];
-		    System.arraycopy(receivedData, 0, combo,0, receivedData.length);
-		    System.arraycopy(a, 0, combo, receivedData.length, a.length);
-		    receivedData = combo;
-		    System.out.println("Bytes Received: " + a);
+
+		    
+		    String ack = "c" + Integer.toString(ackNum);
+
+		    System.out.println(ackNum);
+		    
+		    boolean CanAddPacket = true;
+		    for(Packet pac: packets){
+			    if(pac.getNumber() == ackNum){
+				    System.out.println("Packet Already Received");
+				    CanAddPacket = false;
+				    break;
+			    }
+		    }
+		    if(CanAddPacket){
+			    packets.add(new Packet(ackNum, a));
+		    }
+
+		    Iterator<Packet> iter2 = packets.iterator();
+		    boolean missingNextPacket = true;
+		    while(iter2.hasNext()){
+			    Packet pac = iter2.next();
+
+			    if(pac.getNumber() < currentPacketNumber){
+				    System.out.println("Packet " + pac.getNumber() + " is less than the current number");
+				    System.out.println("Removing Packer from saved array");
+				    iter2.remove();
+			    }
+
+			    if(pac.getNumber() == currentPacketNumber){
+				     byte[] combo = new byte[pac.getData().length + receivedData.length];
+				     System.arraycopy(receivedData, 0, combo, 0, receivedData.length);
+				     System.arraycopy(pac.getData(), 0, combo, receivedData.length, pac.getData().length);
+				     receivedData = combo;
+				     System.out.println("Adding packet: " + pac.getNumber() + " to the output");
+				     iter2.remove();
+				     currentPacketNumber++;
+				     missingNextPacket = false;
+			    }
+		    }
+
+		    if(missingNextPacket){
+			    String resendAck = "c" + Integer.toString(currentPacketNumber - 1);
+			    ByteBuffer buf5 = ByteBuffer.wrap(resendAck.getBytes());
+			    System.out.println("Resending Ack for packet " + (currentPacketNumber - 1));
+			    sc.send(buf5, new InetSocketAddress((ipAddress), portNumber));
+		    }else{
+			    
+
+
+		 	   /** Adding new packet to the total byte array (ReceivedData[]) **/
+		/*     byte[] combo = new byte[a.length + receivedData.length];
+		     System.arraycopy(receivedData, 0, combo,0, receivedData.length);
+		     System.arraycopy(a, 0, combo, receivedData.length, a.length);
+		     receivedData = combo; */
+		   
+			   
+		   // System.out.println("Bytes Received: " + a);
 		    
 		    
 		    /** Sending acknoledgment **/
-		    String ack = "c" + Integer.toString(ackNum);
 	  	 //   String ack = "c" + Integer.toString(acknowledgment); //Every acknowledgment begins with c
 		    //I had issues checking if the string was null on the server end, so instead I check that
 		    //it begins with c then remove the c leaving just the integer on the server end.
 		    ByteBuffer buf4 = ByteBuffer.wrap(ack.getBytes());
 		    sc.send(buf4, new InetSocketAddress((ipAddress), portNumber));
 		    acknowledgment++;
+		    }
 
 	    }
 

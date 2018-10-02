@@ -2080,9 +2080,7 @@ In popular culture
 An illustration inspired by the A. E. Chalon portrait created for the Ada Initiative, which supported open technology and women
 Lovelace has been portrayed in Romulus Linney's 1977 play Childe Byron,[87] the 1990 steampunk novel The Difference Engine by William Gibson and Bruce Sterling,[88] the 1997 film Conceiving Ada,[89] and in John Crowley's 2005 novel Lord Byron's Novel: The Evening Land, where she is featured as an unseen character whose personality is forcefully depicted in her annotations and anti-heroic efforts to archive her father's lost novel.[90]
 
-In Tom Stoppard's 1993 play Arcadia, the precocious teenage genius Thomasina Coverly (a character "apparently based" on Ada Lovelace—the play also involves Lord Byron) comes to understand chaos theory, and theorises the second law of thermodynamics, before either is officiad be expressed by those of the abstract science of operations, and which should be also susceptible of adaptations to the action of the operating notation and mechanism of the engine...Supposing, for instance, that the fundamental relations of pitched sounds in the science of harmony and of musical composition were susceptible of such expression and adaptations, the engine might compose elaborate and scientific pieces of music of any degree of complexity or extent.[74][75]
-
-This analysis was an important development from previous ideas about the capabilities of computing devices and anticipated the implications of modern computing one hundred years before they were realised. Walter Isaacson ascribes Lovelace's insight regarding the application of computing to any process based on logical symbols to an observation about textiles: "When she saw some mechanical looms that used punchcards to direct the weaving of beautiful patterns, it reminded her of how Babbage's engine used punched cards to make calculations."lly recognised.[91][92] The 2015 play Ada and the Memory Engine by Lauren Gunderson portrays Lovelace and Charles Babbage in unrequited love, and it imagines a post-death meeting between Lovelace and her father.[93][94]
+In Tom Stoppard's 1993 play Arcadia, the precocious teenage genius Thomasina Coverly (a character "apparently based" on Ada Lovelace—the play also involves Lord Byron) comes to understand chaos theory, and theorises the second law of thermodynamics, before either is officially recognised.[91][92] The 2015 play Ada and the Memory Engine by Lauren Gunderson portrays Lovelace and Charles Babbage in unrequited love, and it imagines a post-death meeting between Lovelace and her father.[93][94]
 
 Lovelace and Babbage are the main characters in Sydney Padua's webcomic and graphic novel The Thrilling Adventures of Lovelace and Babbage. The comic features extensive footnotes on the history of Ada Lovelace, and many lines of dialogue are drawn from actual correspondence.[95]
 
@@ -2092,11 +2090,7 @@ As of November 2015 all new British passports have included an illustration of L
 
 In 2017, a Google Doodle honoured her on International Women's Day.[99] Lovelace and Babbage appear as characters in the ITV series Victoria.[100]
 
-The Cardano platform uses ADA as the name for their cryptocurrency and Lovelace as the smallest s[76] This insight is seen as significant by writers such as Betty Toole and Benjamin Woolley, as well as the programmer John Graham-Cumming, whose project Plan 28 has the aim of constructing the first complete Analytical Engine.[77][78][79]
-
-According to the historian of computing and Babbage specialist Doron Swade:
-
-Ada saw something that Babbage in some sense failed to see. In Babbage's world his engines were bound by number...What Lovelace saw—what Ada Byron saw—was that number could represent entities other than quantity. So once you had a machine for manipulating numbers, if those numbers represented other things, letters, musical notes, then the machine could manipulate symbols of which number was one instance, according to rules. It is this fundamental transition from a machine which is a number cruncher to a machine for manipulating symbols according to rules that is the fundamental transition from calculation to computation—to general-purpose computation—and looking back from the present highubunit of an ADA.[101]
+The Cardano platform uses ADA as the name for their cryptocurrency and Lovelace as the smallest subunit of an ADA.[101]
 
 In 2018, Lady Lovelace appears as a character in the second season of the PBS Masterpiece series Victoria, played by Emerald Fennell.[102]
 
@@ -2129,15 +2123,7 @@ Ada Lovelace Symposium, University of Oxford, 13–14 October 2015.[118]
 Special exhibitions were displayed by the Science Museum in London, England[119] and the Weston Library[120] (part of the Bodleian Library) in Oxford, England.
 
 Publications
-Menabrea, Luigi Federico; Lovelace, Ada (1843). "Sketch of the Analytical Engine invented by Charles Babbage... with notes by the translator. Translated by Ada Lovelace". In Richard Taylor. Scientific Memoird and commented on Ada's work, but she was definitely the driver of it." Wolfram then suggests that Lovelace's main achievement was to distill from Babbage's correspondence "a clear exposition of the abstract operation of the machine—something which Babbage never did."[85]
-
-Doron Swade, a specialist on history of computing known for his work on Babbage, analyzed four claims about Lovelace during a lecture on Babbage's analytical engine:
-
-She was a mathematical genius
-She made an influential contribution to the analytical engine
-She was the first computer programmer
-She was a prophet of the computer age
-According to him, only the fourth claim had "any substance at all". He explained that Ada was only a "promising beginner" instead of genius in mathematics, that she began studying basic concepts of mathematics five years after Babbage conceived the analytical engine so she couldn't have made important contributions to it, and that she only published the first computer program instead of actually writing it. Bs. 3. London: Richard and John E. Taylor. pp. 666–731.
+Menabrea, Luigi Federico; Lovelace, Ada (1843). "Sketch of the Analytical Engine invented by Charles Babbage... with notes by the translator. Translated by Ada Lovelace". In Richard Taylor. Scientific Memoirs. 3. London: Richard and John E. Taylor. pp. 666–731.
 See also
 icon	Computer programming portal
 	Biography portal
@@ -2176,17 +2162,7 @@ Citations
  Turney 1972, pp. 138–39.
  Turney 1972, p. 139.
  "Hon. Ada Augusta Byron". The Peerage. 31 January 2012.
- A History of the County of Surrey: Volume 3. Parishes: East Horsley. Retrieved 26 February 2017. Horsley Towers is a large house standing in a park of 300 acres, the seat of the Earl of Lovelace. The old house was rebuilt about 1745. The present house was built by Sir Charles Barry for Mr. Currie on a new site, between 1820 and 1829, in Elizabethan style. Mr. Currie, who owned the combined mlly recognised.[91][92] The 2015 play Ada and the Memory Engine by Lauren Gunderson portrays Lovelace and Charles Babbage in unrequited love, and it imagines a post-death meeting between Lovelace and her father.[93][94]
-
-Lovelace and Babbage are the main characters in Sydney Padua's webcomic and graphic novel The Thrilling Adventures of Lovelace and Babbage. The comic features extensive footnotes on the history of Ada Lovelace, and many lines of dialogue are drawn from actual correspondence.[95]
-
-Lovelace and Mary Shelley as teenagers are the central characters in Jordan Stratford's steampunk series, The Wollstonecraft Detective Agency.[96]
-
-As of November 2015 all new British passports have included an illustration of Lovelace and Babbage on pages 46 and 47.[97][98]
-
-In 2017, a Google Doodle honoured her on International Women's Day.[99] Lovelace and Babbage appear as characters in the ITV series Victoria.[100]
-
-The Cardano platform uses ADA as the name for their cryptocurrency and Lovelace as the smallest sanors, 1784–1829, rebuilt most of the houses in the village and restored the church.
+ A History of the County of Surrey: Volume 3. Parishes: East Horsley. Retrieved 26 February 2017. Horsley Towers is a large house standing in a park of 300 acres, the seat of the Earl of Lovelace. The old house was rebuilt about 1745. The present house was built by Sir Charles Barry for Mr. Currie on a new site, between 1820 and 1829, in Elizabethan style. Mr. Currie, who owned the combined manors, 1784–1829, rebuilt most of the houses in the village and restored the church.
  Wright, Brian (28 October 2015). Andrew Crosse and the mite that shocked the world: The life and work of an electrical pioneer. Matador. p. 262. ISBN 9781784624385.
  "Lovelace, Earl of". Cracroft's Peerage. 2005.
  Woolley 1999, pp. 285–86.
@@ -2211,18 +2187,7 @@ The Cardano platform uses ADA as the name for their cryptocurrency and Lovelace 
  Woolley 1999, pp. 232–33.
  Woolley 1999, p. 305.
  Woolley 1999, pp. 310–14.
- Woolley 1999, pp. 315–17ubunit of an ADA.[101]
-
-In 2018, Lady Lovelace appears as a character in the second season of the PBS Masterpiece series Victoria, played by Emerald Fennell.[102]
-
-On February 2, 2018, Satellogic, a high-resolution Earth observation imaging and analytics company, launched a ÑuSat type micro-satellite named in honor of Ada Lovelace.[103]
-
-Commemoration
-
-Blue plaque to Lovelace in St. James's Square, London
-The computer language Ada, created on behalf of the United States Department of Defense, was named after Lovelace.[104] The reference manual for the language was approved on 10 December 1980 and the Department of Defense Military Standard for the language, MIL-STD-1815, was given the number of the year of her birth.
-
-Since 1998 the British Computer Society (BCS) has awarded the Lovelace Medal,[105] and in 2008 initiated an annual competition for women students.[106] BCSWomen sponsors the Lovelace Colloquium, an annual conference for women undergraduates.[106] Ada College is a further-education college in To.
+ Woolley 1999, pp. 315–17.
  Woolley 1999, p. 335.
  Toole 1998, pp. 36–38.
  Wolfram, Stephen (10 December 2015). "Untangling the Tale of Ada Lovelace". Then, on Sept. 9, Babbage wrote to Ada, expressing his admiration for her and (famously) describing her as 'Enchantress of Number' and 'my dear and much admired Interpreter'. (Yes, despite what's often quoted, he wrote 'Number' not 'Numbers'.)

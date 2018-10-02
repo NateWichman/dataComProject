@@ -40,6 +40,7 @@ class udpclient{
 	    byte[] receivedData = {};
 	  
 	    int timer = 0;
+	    int fileReceivedTimer = 0;
 	    int acknowledgment = 0;
 
 	    ArrayList<Packet> packets = new ArrayList<Packet>();
@@ -49,9 +50,7 @@ class udpclient{
 		    ByteBuffer buf2 = ByteBuffer.allocate(5000);
 		    sc.receive(buf2);
 		    buf2.flip();
-		  //  byte[] a = new byte[buf2.remaining()];
-		  //  buf2.get(a);
-
+		 
 		    /** Converting to string to test for termination code **/
 		    String receivedString = new String(buf2.array());
 		    /** Removing null charachters from string **/
@@ -131,6 +130,17 @@ class udpclient{
 		    acknowledgment++;
 		    timer = 0;
 		    }
+			
+		    /** This block determines if the first packet, the file name was lost. If after 100 loops, we have
+		     * received no packets, the file name is resent to the server **/
+		    if(currentPacketNumber == 0){
+			    fileReceivedTimer++;
+			    System.out.println("fileReceivedTimer: " + fileReceivedTimer);
+			    if(fileReceivedTimer >= 100){
+				    sc.send(buf, new InetSocketAddress((ipAddress), portNumber));
+			    }
+		    }
+				    
 
 	    }
 

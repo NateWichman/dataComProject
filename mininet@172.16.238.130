@@ -139,7 +139,7 @@ class udpclient{
 			 	   System.out.println("Resending Ack for packet " + (currentPacketNumber - 10 + j));
 			 	   sc.send(buf5, new InetSocketAddress((ipAddress), portNumber));
 				   timer = 0;
-			      }
+			    }
 			    }else{
 				    timer ++;
 			    }
